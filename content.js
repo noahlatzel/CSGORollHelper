@@ -70,9 +70,9 @@ function extractCountdown() {
 		let countdownText = countdown.textContent.trim();
 		let countdownFloat = parseFloat(countdownText);
 		if (!isNaN(countdownFloat)) {
-			if(countdownFloat >= 59.9) {
+			if(countdownFloat >= 59.9 && !doubleGreenFlag) {
 				doubleGreenFlag = true;
-				sendNotification('INFO: Double Green detected!');
+				sendNotification('INFO: Double Green detected! @.huppi @.latten');
 				console.log('INFO: Double Green detected!');
 			}
 			if(countdownFloat <= 0.1 && countdownFloat > 0) {

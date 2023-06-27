@@ -1,5 +1,5 @@
-# HSP Helper
-This Chrome Extension allows you to easily book sports courses at the University of Münster by just checking a checkbox. It saves you time by automating the process of filling out the form and submitting it.
+# CSGORoll Helper
+This Chrome Extension allows you to easily leverage the positive expected value on triple green jackpots on CSGORoll.
 
 ## Installation
 1. Download the source code from the Github repository.
@@ -9,12 +9,7 @@ This Chrome Extension allows you to easily book sports courses at the University
 5. Select the folder where you downloaded the source code.
 6. The extension should now be installed and ready to use.
 ## Usage
-1. Go to https://www.uni-muenster.de/Hochschulsport/ and navigate to the course booking page.
-2. Click on the checkbox next to the course you want to book.
-3. Fill out the personal information form that appears when you click on the extensions symbol (puzzle piece, left of downloads symbol) at the top right corner of Google Chrome.
-4. Click on the "Speichern" button. Your personal information is now stored locally on your pc and will only be send to the HSP servers. If you wish to remove your data, just clear the form and click "Speichern".
-5. The extension will automatically pull the data from the local storage and handle the rest.
-6. You should receive a confirmation message if the booking was successful.
+1. Go to https://www.csgoroll.com/en/roll and let the magic happen!
 ## Troubleshooting
 If you encounter any issues while using the extension, please try the following:
 

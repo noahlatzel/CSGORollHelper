@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "CSGORoll Helper",
+  "version": "1.0",
+  "description": "Make 100% secure profit with CSGORoll!",
+  "host_permissions": [
+    "https://www.csgoroll.com/en/roll"
+  ],
+  "permissions": [
+    "activeTab",
+    "scripting",
+	"storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.csgoroll.com/en/roll"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

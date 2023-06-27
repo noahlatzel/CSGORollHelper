@@ -81,7 +81,7 @@ function extractCountdown() {
 				if(doubleGreenFlag) {
 					if(jackpot > 0 && greenBet > 0) {
 						let optimalBet = getOptimalBet(greenBet, jackpot);
-						betValue(optimalBet);
+						betValue(5);
 						sendNotification('Current jackpot is ' + jackpot + '\nOptimal bet on green is ' + optimalBet.toFixed(2) + '\nProfit from jackpot is ' + f(optimalBet, greenBet, jackpot).toFixed(2));
 						console.log('Current jackpot is ' + jackpot + '\nOptimal bet on green is ' + optimalBet.toFixed(2) + '\nProfit from jackpot is ' + f(optimalBet, greenBet, jackpot).toFixed(2));
 					}

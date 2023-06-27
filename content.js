@@ -72,7 +72,7 @@ function extractCountdown() {
 		if (!isNaN(countdownFloat)) {
 			if(countdownFloat >= 59.9 && !doubleGreenFlag) {
 				doubleGreenFlag = true;
-				sendNotification('INFO: Double Green detected! <@.huppi> <@.latten>');
+				sendNotification('INFO: Double Green detected!');
 				console.log('INFO: Double Green detected!');
 			}
 			if(countdownFloat <= 0.1 && countdownFloat > 0) {

@@ -1,5 +1,6 @@
 let doubleGreenFlag = false;
 let webhookURL = 'https://discord.com/api/webhooks/1123197528314224640/O1XhhgCiC_4PKOx6bk3hjmNbMTJUs0_4ujRE3BTi6SKW_NfuVdPXyGMUerTlK1z9hk4j';
+let oldJackpot = -1;
 
 // Function to get an element by XPath
 function getElementByXpath(path) {
@@ -72,17 +73,23 @@ function extractCountdown() {
 		if (!isNaN(countdownFloat)) {
 			if(countdownFloat >= 59.9 && !doubleGreenFlag) {
 				doubleGreenFlag = true;
-				sendNotification('INFO: Double Green detected!');
+				oldJackpot = extractJackpot();
+				sendNotification('INFO: Double Green detected with jackpot ' + extractJackpot() + '!\nhttps://www.csgoroll.com/en/roll');
 				console.log('INFO: Double Green detected!');
 			}
 			if(countdownFloat <= 0.1 && countdownFloat > 0) {
 				let jackpot = extractJackpot();
+				if(jackpot < oldJackpot) {
+					sendNotification('INFO: Jackpot has been hit at ' + oldJackpot + '!');
+					console.log('INFO: Jackpot has been hit at ' + oldJackpot + '!');
+					oldJackpot = jackpot;
+				}
 				let greenBet = extractGreenBet();
 				if(doubleGreenFlag) {
 					if(jackpot > 0 && greenBet > 0) {
 						let optimalBet = getOptimalBet(greenBet, jackpot);
 						betValue(5);
-						sendNotification('Current jackpot is ' + jackpot + '\nOptimal bet on green is ' + optimalBet.toFixed(2) + '\nProfit from jackpot is ' + f(optimalBet, greenBet, jackpot).toFixed(2));
+						//sendNotification('Current jackpot is ' + jackpot + '\nOptimal bet on green is ' + optimalBet.toFixed(2) + '\nProfit from jackpot is ' + f(optimalBet, greenBet, jackpot).toFixed(2));
 						console.log('Current jackpot is ' + jackpot + '\nOptimal bet on green is ' + optimalBet.toFixed(2) + '\nProfit from jackpot is ' + f(optimalBet, greenBet, jackpot).toFixed(2));
 					}
 					doubleGreenFlag = false;
